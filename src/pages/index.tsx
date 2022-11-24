@@ -120,10 +120,10 @@ const Index = () => {
           <iframe
             width="720"
             height="405"
-            frameborder="0"
+            frameBorder="0"
             src="https://www.ixigua.com/iframe/6580983790653407747?autoplay=0"
-            referrerpolicy="unsafe-url"
-            allowfullscreen
+            referrerPolicy="unsafe-url"
+            allowFullScreen
           ></iframe>
         </Flex>
       </Main>
