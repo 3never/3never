@@ -8,6 +8,7 @@ export default class Document extends NextDocument {
       <Html>
         <Head>
           <link rel="icon" type="image/x-icon" href="/ico.svg" />
+          <title>3NEVER</title>
         </Head>
         <body>
           {/* Make Color mode to persists when you refresh the page. */}
