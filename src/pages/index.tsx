@@ -11,6 +11,7 @@ import {
   List,
   ListIcon,
   ListItem,
+  useToast,
 } from '@chakra-ui/react';
 import { CheckCircleIcon, LinkIcon } from '@chakra-ui/icons';
 
@@ -21,21 +22,43 @@ import { NavBar } from '../components/NavBar';
 import { MyDate } from '../components/MyDate';
 import { CTA } from '../components/CTA';
 import { Footer } from '../components/Footer';
+const moment = require('moment');
+
+import react, { useState } from 'react';
+import PoweredByVercel from 'powered-by-vercel';
 
 const Index = () => {
+  const toast = useToast();
+  const date = moment().format('YYYY年MM月DD日');
+  const [署名, set署名] = useState('');
+  const onChange = (e) => {
+    set署名(e.target.value);
+  };
   const capture = () => {
+    if (署名 == '') {
+      toast({
+        title: `请先署名`,
+        status: 'error',
+        isClosable: true,
+      });
+      return;
+    }
     const canvas1 = document.createElement('canvas');
     canvas1.width = 540;
     canvas1.height = 960;
     let context1 = canvas1.getContext('2d');
     context1.rect(0, 0, canvas1.width, canvas1.height);
-    context1.fillStyle = '#fff';
+    context1.fillStyle = '#939498';
     context1.fill();
     var myImage = new Image();
-    myImage.src = 'https://i2.100024.xyz/2022/11/24/mees05.webp'; //背景图片 你自己本地的图片或者在线图片
+    myImage.src = '/声明.png'; //背景图片 你自己本地的图片或者在线图片
     myImage.crossOrigin = 'Anonymous';
+
     myImage.onload = function () {
       context1.drawImage(myImage, 0, 0, 540, 960);
+      context1.font = '20px Outfit';
+      context1.fillText(署名, 320, 560);
+      context1.fillText(date, 320, 590);
       const dataImg = new Image();
       dataImg.src = canvas1.toDataURL('image/png');
       const alink = document.createElement('a');
@@ -45,7 +68,7 @@ const Index = () => {
     };
   };
   return (
-    <Container height="200vh">
+    <Container>
       <Hero />
       <Main>
         <Box style={{ textIndent: 60 }}>
@@ -64,7 +87,8 @@ const Index = () => {
             </Code>
             向任何级别人大代表反映过意见和要求。
           </Text>
-          <Flex marginTop={12} alignItems="center">
+          <Flex marginTop={12}>
+            <Spacer />
             <Flex flexDirection="column">
               <Input
                 color="gray"
@@ -72,18 +96,19 @@ const Index = () => {
                 variant="unstyled"
                 placeholder="署名"
                 width={32}
+                onChange={onChange}
               />
               <MyDate />
             </Flex>
 
-            <Spacer />
+            {/* <Spacer />
             <Flex flexDirection="column">
               <ChakraImage
                 boxSize="48px"
                 src="https://i2.100024.xyz/2022/11/24/iixh8a.svg"
                 alt="qrcode"
               />
-            </Flex>
+            </Flex> */}
           </Flex>
         </Box>
         <Flex paddingTop={8} justifyContent="center">
@@ -91,39 +116,23 @@ const Index = () => {
             一键声明
           </Button>
         </Flex>
-
-        {/* <Text color="text">
-          Example repository of <Code>Next.js</Code> + <Code>chakra-ui</Code> +{' '}
-          <Code>TypeScript</Code>.
-        </Text>
-  
-        <List spacing={3} my={0} color="text">
-          <ListItem>
-            <ListIcon as={CheckCircleIcon} color="green.500" />
-            <ChakraLink
-              isExternal
-              href="https://chakra-ui.com"
-              flexGrow={1}
-              mr={2}
-            >
-              Chakra UI <LinkIcon />
-            </ChakraLink>
-          </ListItem>
-          <ListItem>
-            <ListIcon as={CheckCircleIcon} color="green.500" />
-            <ChakraLink isExternal href="https://nextjs.org" flexGrow={1} mr={2}>
-              Next.js <LinkIcon />
-            </ChakraLink>
-          </ListItem>
-        </List> */}
+        <Hero title="呐喊的力量" />
+        <Flex marginTop={-24}>
+          <iframe
+            width="720"
+            height="405"
+            frameborder="0"
+            src="https://www.ixigua.com/iframe/6580983790653407747?autoplay=0"
+            referrerpolicy="unsafe-url"
+            allowfullscreen
+          ></iframe>
+        </Flex>
       </Main>
 
       <NavBar />
       <Footer>
-        <Text>Next ❤️ Chakra</Text>
+        <PoweredByVercel />
       </Footer>
-      {/* <CTA /> */}
-      {/* <canvas id="customCanvas" width={540} height={960}></canvas> */}
     </Container>
   );
 };
