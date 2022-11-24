@@ -25,7 +25,6 @@ import { Footer } from '../components/Footer';
 const moment = require('moment');
 
 import react, { useState } from 'react';
-import PoweredByVercel from 'powered-by-vercel';
 
 const Index = () => {
   const toast = useToast();
@@ -130,9 +129,7 @@ const Index = () => {
       </Main>
 
       <NavBar />
-      <Footer>
-        <PoweredByVercel />
-      </Footer>
+      <Footer>{/* <PoweredByVercel /> */}</Footer>
     </Container>
   );
 };
