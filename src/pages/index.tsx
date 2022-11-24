@@ -44,7 +44,7 @@ const Index = () => {
     }
 
     var myImage = new Image();
-    myImage.src = '/声明.png'; //背景图片 你自己本地的图片或者在线图片
+    myImage.src = '/template.svg'; //背景图片 你自己本地的图片或者在线图片
     myImage.crossOrigin = 'Anonymous';
     myImage.onload = function () {
       let canvas1 = document.createElement('canvas');
