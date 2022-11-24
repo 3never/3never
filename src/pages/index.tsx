@@ -44,7 +44,7 @@ const Index = () => {
     }
 
     var myImage = new Image();
-    myImage.src = '/test.png'; //背景图片 你自己本地的图片或者在线图片
+    myImage.src = '/声明.png'; //背景图片 你自己本地的图片或者在线图片
     myImage.crossOrigin = 'Anonymous';
     myImage.onload = function () {
       let canvas1 = document.createElement('canvas');
@@ -62,7 +62,7 @@ const Index = () => {
       dataImg.src = canvas1.toDataURL('image/png');
       const alink = document.createElement('a');
       alink.href = dataImg.src;
-      alink.download = 'test.png';
+      alink.download = '声明.png';
       alink.click();
     };
   };
