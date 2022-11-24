@@ -50,7 +50,7 @@ const Index = () => {
     context1.fillStyle = '#939498';
     context1.fill();
     var myImage = new Image();
-    myImage.src = '/声明.png'; //背景图片 你自己本地的图片或者在线图片
+    myImage.src = '/template.png'; //背景图片 你自己本地的图片或者在线图片
     myImage.crossOrigin = 'Anonymous';
 
     myImage.onload = function () {
@@ -62,7 +62,7 @@ const Index = () => {
       dataImg.src = canvas1.toDataURL('image/png');
       const alink = document.createElement('a');
       alink.href = dataImg.src;
-      alink.download = 'testImg.png';
+      alink.download = '声明.png';
       alink.click();
     };
   };
