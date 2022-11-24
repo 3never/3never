@@ -42,27 +42,27 @@ const Index = () => {
       });
       return;
     }
-    const canvas1 = document.createElement('canvas');
-    canvas1.width = 540;
-    canvas1.height = 960;
-    let context1 = canvas1.getContext('2d');
-    context1.rect(0, 0, canvas1.width, canvas1.height);
-    context1.fillStyle = '#939498';
-    context1.fill();
+
     var myImage = new Image();
     myImage.src = '/template.png'; //背景图片 你自己本地的图片或者在线图片
     myImage.crossOrigin = 'Anonymous';
-
     myImage.onload = function () {
-      context1.drawImage(myImage, 0, 0, 540, 960);
+      let canvas1 = document.createElement('canvas');
+      canvas1.width = 540;
+      canvas1.height = 960;
+      let context1 = canvas1.getContext('2d');
+      context1.rect(0, 0, canvas1.width, canvas1.height);
+      context1.fillStyle = '#939498';
+      context1.fill();
       context1.font = '20px Outfit';
+      context1.drawImage(myImage, 0, 0, 540, 960);
       context1.fillText(署名, 320, 560);
       context1.fillText(date, 320, 590);
       const dataImg = new Image();
       dataImg.src = canvas1.toDataURL('image/png');
       const alink = document.createElement('a');
       alink.href = dataImg.src;
-      alink.download = '声明.png';
+      alink.download = 'test.png';
       alink.click();
     };
   };
@@ -116,7 +116,7 @@ const Index = () => {
           </Button>
         </Flex>
         <Hero title="呐喊的力量" />
-        <Flex marginTop={-24}>
+        {/* <Flex marginTop={-24}>
           <iframe
             width="720"
             height="405"
@@ -125,7 +125,7 @@ const Index = () => {
             referrerPolicy="unsafe-url"
             allowFullScreen
           ></iframe>
-        </Flex>
+        </Flex> */}
       </Main>
 
       <NavBar />
