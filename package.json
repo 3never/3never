@@ -12,9 +12,13 @@
     "@emotion/react": "^11.9.0",
     "@emotion/styled": "^11.9.0",
     "framer-motion": "^6.3.0",
+    "html2canvas": "^1.4.1",
+    "moment": "^2.29.4",
     "next": "latest",
     "react": "^18.2.0",
-    "react-dom": "^18.2.0"
+    "react-canvas-poster": "^1.1.0",
+    "react-dom": "^18.2.0",
+    "react-icons": "^4.6.0"
   },
   "devDependencies": {
     "@types/node": "^18.0.0",
