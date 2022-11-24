@@ -44,7 +44,7 @@ const Index = () => {
     }
 
     var myImage = new Image();
-    myImage.src = '/template.png'; //背景图片 你自己本地的图片或者在线图片
+    myImage.src = '/test.png'; //背景图片 你自己本地的图片或者在线图片
     myImage.crossOrigin = 'Anonymous';
     myImage.onload = function () {
       let canvas1 = document.createElement('canvas');
@@ -116,7 +116,7 @@ const Index = () => {
           </Button>
         </Flex>
         <Hero title="呐喊的力量" />
-        {/* <Flex marginTop={-24}>
+        <Flex marginTop={-24}>
           <iframe
             width="720"
             height="405"
@@ -125,7 +125,7 @@ const Index = () => {
             referrerPolicy="unsafe-url"
             allowFullScreen
           ></iframe>
-        </Flex> */}
+        </Flex>
       </Main>
 
       <NavBar />

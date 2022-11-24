@@ -6,7 +6,9 @@ export default class Document extends NextDocument {
   render() {
     return (
       <Html>
-        <Head />
+        <Head>
+          <link rel="icon" type="image/x-icon" href="/ico.svg" />
+        </Head>
         <body>
           {/* Make Color mode to persists when you refresh the page. */}
           <ColorModeScript initialColorMode={theme.config.initialColorMode} />
