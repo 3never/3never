@@ -76,7 +76,7 @@ const Index = () => {
             <Code fontSize="3xl" as="mark" style={{ textIndent: 0 }}>
               从未
             </Code>
-            参与过任何社区居委会或村委会主任、副主任、委员的选举，
+            参与过任何居委会或村委会主任、副主任、委员的选举，
             <Code fontSize="3xl" as="mark" style={{ textIndent: 0 }}>
               从未
             </Code>
