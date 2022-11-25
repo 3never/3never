@@ -13,7 +13,10 @@ import {
   ListItem,
   useToast,
 } from '@chakra-ui/react';
-import { CheckCircleIcon, LinkIcon } from '@chakra-ui/icons';
+import {
+  ArrowLeftIcon,
+  ArrowRightIcon, CheckCircleIcon, LinkIcon
+} from '@chakra-ui/icons';
 
 import { Hero } from '../components/Hero';
 import { Container } from '../components/Container';
@@ -26,12 +29,15 @@ const moment = require('moment');
 
 import react, { useState } from 'react';
 
+import { Provider, Carousel, LeftButton, RightButton } from "@threenever/chakra-ui-carousel";
+
 import Head from 'next/head';
 
 const Index = () => {
   const toast = useToast();
   const date = moment().format('YYYY年MM月DD日');
   const [署名, set署名] = useState('');
+  const [current, setCurrent] = useState(0);
   const onChange = (e) => {
     set署名(e.target.value);
   };
@@ -46,7 +52,7 @@ const Index = () => {
     }
 
     var myImage = new Image();
-    myImage.src = '/template.svg'; //背景图片 你自己本地的图片或者在线图片
+    myImage.src = `/template${current}.svg`; //背景图片 你自己本地的图片或者在线图片
     myImage.crossOrigin = 'Anonymous';
     myImage.onload = function () {
       let canvas1 = document.createElement('canvas');
@@ -64,7 +70,7 @@ const Index = () => {
       dataImg.src = canvas1.toDataURL('image/png');
       const alink = document.createElement('a');
       alink.href = dataImg.src;
-      alink.download = '声明.png';
+      alink.download = `声明${current}.png`;
       alink.click();
     };
   };
@@ -76,21 +82,65 @@ const Index = () => {
       <Hero />
       <Main>
         <Box style={{ textIndent: 60 }}>
-          <Text color="text" fontSize="3xl" as="b">
-            本人
-            <Code fontSize="3xl" as="mark" style={{ textIndent: 0 }}>
-              从未
-            </Code>
-            参与过任何居委会或村委会主任、副主任、委员的选举，
-            <Code fontSize="3xl" as="mark" style={{ textIndent: 0 }}>
-              从未
-            </Code>
-            参与过基层人大代表的选举，
-            <Code fontSize="3xl" as="mark" style={{ textIndent: 0 }}>
-              从未
-            </Code>
-            向任何级别人大代表反映过意见和要求。
-          </Text>
+          <Provider current={setCurrent}>
+            <Carousel gap={0} full={true}>
+              <Text color="text" fontSize="3xl" as="b">
+                本人
+                <Code fontSize="3xl" as="mark" style={{ textIndent: 0 }}>
+                  从未
+                </Code>
+                参与过任何居委会或村委会主任、副主任、委员的选举，
+                <Code fontSize="3xl" as="mark" style={{ textIndent: 0 }}>
+                  从未
+                </Code>
+                参与过基层人大代表的选举，
+                <Code fontSize="3xl" as="mark" style={{ textIndent: 0 }}>
+                  从未
+                </Code>
+                向任何级别人大代表反映过意见和要求。
+              </Text>
+
+              <Text color="text" fontSize="3xl" as="b">
+                本人
+                <Code fontSize="3xl" as="mark" style={{ textIndent: 0 }}>
+                  从未
+                </Code>
+                认真参与过任何居委会或村委会主任、副主任、委员的选举，
+                <Code fontSize="3xl" as="mark" style={{ textIndent: 0 }}>
+                  从未
+                </Code>
+                认真参与过基层人大代表的选举，
+                <Code fontSize="3xl" as="mark" style={{ textIndent: 0 }}>
+                  从未
+                </Code>
+                向任何级别人大代表反映过意见和要求。
+              </Text>
+              <Text style={{lineBreak:"anywhere"}}  color="text" fontSize="3xl" as="b">
+                本人曾加入中国少年先锋队和中国共产主义青年团，如今对于当初的加入感到十分<Code fontSize="3xl" as="mark" style={{ textIndent: 0 }}>
+                  遗憾
+                </Code>和<Code fontSize="3xl" as="mark" style={{ textIndent: 0 }}>
+                  后悔
+                </Code>，如果可以再做一次选择的话，本人<Code fontSize="3xl" as="mark" style={{ textIndent: 0 }}>
+                  不会
+                </Code>加入上述两个组织。
+              </Text>
+              <Text color="text" fontSize="3xl" as="b">
+                本人之前<Code fontSize="3xl" as="mark" style={{ textIndent: 0 }}>
+                  没有
+                </Code>加入过中国共产党，之后也<Code fontSize="3xl" as="mark" style={{ textIndent: 0 }}>
+                  不会
+                </Code>加入。如若有变，绝非<Code fontSize="3xl" as="mark" style={{ textIndent: 0 }}>
+                  自愿
+                </Code>。
+              </Text>
+            </Carousel>
+            <Flex justifyContent="center" marginTop={8}>
+              <LeftButton />
+              <RightButton />
+            </Flex>
+
+          </Provider>
+
           <Flex marginTop={12}>
             <Spacer />
             <Flex flexDirection="column">
