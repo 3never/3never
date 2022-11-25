@@ -26,6 +26,8 @@ const moment = require('moment');
 
 import react, { useState } from 'react';
 
+import Head from 'next/head';
+
 const Index = () => {
   const toast = useToast();
   const date = moment().format('YYYY年MM月DD日');
@@ -68,6 +70,9 @@ const Index = () => {
   };
   return (
     <Container>
+      <Head>
+        <title>3NEVER</title>
+      </Head>
       <Hero />
       <Main>
         <Box style={{ textIndent: 60 }}>
