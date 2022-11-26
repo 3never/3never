@@ -115,7 +115,7 @@ const Index = () => {
                 </Code>
                 向任何级别人大代表反映过意见和要求。
               </Text>
-              <Text style={{lineBreak:"anywhere"}}  color="text" fontSize="3xl" as="b">
+              <Text style={{ lineBreak: "anywhere" }} color="text" fontSize="3xl" as="b">
                 本人曾加入中国少年先锋队和中国共产主义青年团，如今对于当初的加入感到十分<Code fontSize="3xl" as="mark" style={{ textIndent: 0 }}>
                   遗憾
                 </Code>和<Code fontSize="3xl" as="mark" style={{ textIndent: 0 }}>
@@ -132,6 +132,12 @@ const Index = () => {
                 </Code>加入。如若有变，绝非<Code fontSize="3xl" as="mark" style={{ textIndent: 0 }}>
                   自愿
                 </Code>。
+              </Text>
+              <Text color="text" fontSize="3xl" as="b">
+                本人眼中的<Code fontSize="3xl" as="mark" style={{ textIndent: 0 }}>
+                  皇帝
+                </Code>确实是裸体，一丝不挂，没穿衣裳。
+
               </Text>
             </Carousel>
             <Flex justifyContent="center" marginTop={8}>
