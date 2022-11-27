@@ -139,6 +139,14 @@ const Index = () => {
                 </Code>确实是裸体，一丝不挂，没穿衣裳。
 
               </Text>
+              <Text color="text" fontSize="3xl" as="b">
+                昨晚<Code fontSize="3xl" as="mark" style={{ textIndent: 0 }}>
+                上海
+                </Code>的活动是<Code fontSize="3xl" as="mark" style={{ textIndent: 0 }}>
+                  本人
+                </Code>组织的。
+
+              </Text>
             </Carousel>
             <Flex justifyContent="center" marginTop={8}>
               <LeftButton />
