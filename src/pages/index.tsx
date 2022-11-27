@@ -142,8 +142,8 @@ const Index = () => {
               <Text color="text" fontSize="3xl" as="b">
                 昨晚<Code fontSize="3xl" as="mark" style={{ textIndent: 0 }}>
                 上海
-                </Code>的活动是<Code fontSize="3xl" as="mark" style={{ textIndent: 0 }}>
-                  本人
+                </Code>的活动是本人<Code fontSize="3xl" as="mark" style={{ textIndent: 0 }}>
+                  亲自
                 </Code>组织的。
 
               </Text>
