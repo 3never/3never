@@ -139,22 +139,6 @@ const Index = () => {
                 </Code>确实是裸体，一丝不挂，没穿衣裳。
 
               </Text>
-              <Text color="text" fontSize="3xl" as="b">
-                昨晚<Code fontSize="3xl" as="mark" style={{ textIndent: 0 }}>
-                  上海
-                </Code>的活动是本人<Code fontSize="3xl" as="mark" style={{ textIndent: 0 }}>
-                  亲自
-                </Code>组织的。
-
-              </Text>
-              <Text color="text" fontSize="3xl" as="b">
-                本人并非网传上海警察<Code fontSize="3xl" as="mark" style={{ textIndent: 0 }}>
-                  姚远
-                </Code> 的 <Code fontSize="3xl" as="mark" style={{ textIndent: 0 }}>
-                  野爹
-                </Code> ，恳请广大网民朋友核实信息后继续慰问。
-
-              </Text>
             </Carousel>
             <Flex justifyContent="center" marginTop={8}>
               <LeftButton />
