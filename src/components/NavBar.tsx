@@ -1,9 +1,11 @@
-import { Flex, Spacer } from '@chakra-ui/react';
+import { Flex, Spacer, Button } from '@chakra-ui/react';
 import { useColorMode, IconButton } from '@chakra-ui/react';
 
 import { DarkModeSwitch } from '../components/DarkModeSwitch';
 import { Github } from '../components/Github';
 import { Logo } from '../components/Logo';
+
+import Link from "next/link"
 
 export const NavBar = () => {
   const { colorMode, toggleColorMode } = useColorMode();
@@ -22,6 +24,12 @@ export const NavBar = () => {
     >
       <Logo />
       <Spacer />
+
+      <Link href="/fuckAuditor">
+        <Button marginRight={2} colorScheme='gray' variant='ghost'>
+          累死那个审核员
+        </Button>
+      </Link>
       <Github />
       <DarkModeSwitch />
     </Flex>

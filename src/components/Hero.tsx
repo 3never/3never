@@ -1,6 +1,6 @@
 import { Flex, Heading } from '@chakra-ui/react';
 
-export const Hero = ({ title }: { title: string }) => (
+export const Hero = ({ title,size }: { title: string,size:string }) => (
   <Flex
     justifyContent="center"
     alignItems="center"
@@ -8,10 +8,11 @@ export const Hero = ({ title }: { title: string }) => (
     bgGradient="linear(to-l, heroGradientStart, heroGradientEnd)"
     bgClip="text"
   >
-    <Heading fontSize="6xl">{title}</Heading>
+    <Heading fontSize={size}>{title}</Heading>
   </Flex>
 );
 
 Hero.defaultProps = {
   title: '声明',
+  size: '6xl'
 };

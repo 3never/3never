@@ -80,6 +80,7 @@ const Index = () => {
         <title>3NEVER</title>
       </Head>
       <Hero />
+
       <Main>
         <Box style={{ textIndent: 60 }}>
           <Provider current={setCurrent}>
@@ -190,7 +191,10 @@ const Index = () => {
       </Main>
 
       <NavBar />
-      <Footer>{/* <PoweredByVercel /> */}</Footer>
+      <Footer id='footer'>
+
+        
+      </Footer>
     </Container>
   );
 };
